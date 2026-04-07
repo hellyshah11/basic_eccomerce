@@ -21,6 +21,7 @@ import { MatIcon } from '@angular/material/icon';
 export class StarRating {
 rating =input.required<number>();
 
+//array of stars
 starArray= computed(()=>{
   const fullStars = Math.floor(this.rating());
   return Array(5).fill(false).map((_,index)=>index<fullStars);
