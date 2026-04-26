@@ -34,10 +34,10 @@ import { StarRating } from "../star-rating/star-rating";
           {{product().isStock ? 'In Stock':'Out of Stock'}}
         </div>
 
-        <div class="flex items-center justify-content-between mt-auto">
-          <span class="text-2xl font-bold text-gray-900"> \${{product().price}}</span>
-          <button matButton="filled" class="flex items-center gap-2" (click)="store.addToCart(product())">
-            <mat-icon>shopping_cart</mat-icon>
+        <div class="flex items-center justify-between mt-auto">
+          <span class="text-xl font-bold text-gray-900"> \${{product().price}}</span>
+          <button matButton="filled" class="flex items-center gap-2" style="border-radius:6px;padding:20px" (click)="store.addToCart(product())">
+            <mat-icon >shopping_cart</mat-icon>
             Add to cart
           </button>
         </div>
