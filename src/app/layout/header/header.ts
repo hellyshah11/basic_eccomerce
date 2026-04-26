@@ -16,7 +16,7 @@ import { MatIconButton } from '@angular/material/button';
         <button matIconButton class="iconButton" (click)="store.toggleMenuSidebar()">
           <mat-icon>menu</mat-icon>
         </button>
-        <span routerLink="/products/all">Modern Store</span> 
+        <span routerLink="/products/all">UrbanKart</span> 
       </div>
       <div class="w-150 flex items-center bg-white border-gray-200 rounded-lg px-4 py-1 shadow-sm ">
         <mat-icon class="mr-2">search</mat-icon>
