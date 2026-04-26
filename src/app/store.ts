@@ -21,6 +21,8 @@ export type EcommerceState={
     selectedProductId:string | undefined;
     loading:boolean;
     writeReview:boolean;
+    menuSideBar:boolean;
+    searchQuery:string;
 }
 
 export const EcommerceStore = signalStore(
@@ -120,6 +122,31 @@ export const EcommerceStore = signalStore(
         reviewCount: 2,
         isStock: true,
         Category: 'Electronics',
+        reviews: [
+          {
+            id: 'r2-1',
+            productId: '2',
+            userName: 'Priya Mishra',
+            userImageUrl: 'https://i.pravatar.cc/150?img=1',
+            rating: 5,
+            title: 'Best Smart Tv I have ever owned!',
+            comment:
+              'The sound system is absolutely incredible. ',
+            reviewDate: new Date('2024-11-12'),
+          },
+          {
+            id: 'r2-2',
+            productId: '2',
+            userName: 'Shanti Priya',
+            userImageUrl: 'https://i.pravatar.cc/150?img=2',
+            rating: 4,
+            title: 'AMaxing Display and Great sound',
+            comment:
+              'Sound quality is premium and ANC works like a charm in noisy environments.',
+            reviewDate: new Date('2024-10-28'),
+          },
+          
+        ],
       },
       {
         id: '3',
@@ -172,7 +199,7 @@ export const EcommerceStore = signalStore(
             productId: '4',
             userName: 'Sophia Williams',
             userImageUrl: 'https://i.pravatar.cc/150?img=9',
-            rating: 5,
+            rating: 4,
             title: 'Absolutely love this jacket!',
             comment:
               'The fit is perfect and the denim feels high quality. It pairs well with almost everything in my wardrobe. Got so many compliments wearing it.',
@@ -183,7 +210,7 @@ export const EcommerceStore = signalStore(
             productId: '4',
             userName: 'Ethan Clarke',
             userImageUrl: 'https://i.pravatar.cc/150?img=10',
-            rating: 4,
+            rating: 3,
             title: 'Stylish and well-made',
             comment:
               'Really nice vintage look. The stitching is clean and the buttons feel sturdy. Slightly stiff at first but softens up nicely after a few wears.',
@@ -209,9 +236,22 @@ export const EcommerceStore = signalStore(
         price: 34.99,
         imageUrl: 'tshirt.jpg',
         rating: 4,
-        reviewCount: 4,
+        reviewCount: 1,
         isStock: true,
         Category: 'Clothing',
+        reviews: [
+          {
+            id: 'r5-1',
+            productId: '5',
+            userName: 'Shittal Patel',
+            userImageUrl: 'https://i.pravatar.cc/150?img=1',
+            rating: 4,
+            title: 'All colors aree totally nice and good quality!',
+            comment:
+              'Cloth quality is premium for this rates and the fit is perfect. I bought this pack in black, white, and gray and they have become my go-to tees for everyday wear.',
+            reviewDate: new Date('2024-12-12'),
+          },
+        ],
       },
       {
         id: '6',
@@ -220,9 +260,66 @@ export const EcommerceStore = signalStore(
         price: 134.99,
         imageUrl: 'coat.jpg',
         rating: 5,
-        reviewCount: 6,
+        reviewCount: 5,
         isStock: true,
         Category: 'Clothing',
+         reviews: [
+          {
+            id: 'r6-1',
+            productId: '6',
+            userName: 'Anjali Singh',
+            userImageUrl: 'https://i.pravatar.cc/150?img=1',
+            rating: 5,
+            title: 'Warm, stylish, and great value!',
+            comment:
+              'Good for the price.',
+            reviewDate: new Date('2024-08-12'),
+          },
+          {
+            id: 'r6-2',
+            productId: '6',
+            userName: 'Saavi Sharma',
+            userImageUrl: 'https://i.pravatar.cc/150?img=1',
+            rating: 1,
+            title: 'Torned after first use',
+            comment:
+              'Dont buy its a waste of money.',
+            reviewDate: new Date('2024-08-12'),
+          },
+          {
+            id: 'r6-3',
+            productId: '6',
+            userName: 'Yashvi Shukla',
+            userImageUrl: 'https://i.pravatar.cc/150?img=1',
+            rating: 2,
+            title: 'Not worth the price',
+            comment:
+              'The coat looked good initially but after wearing it a couple of times, the fabric started pilling and it lost its shape. Definitely expected better quality for the price.',
+            reviewDate: new Date('2024-08-12'),
+          },
+          {
+            id: 'r6-4',
+            productId: '6',
+            userName: 'Richa Chaada',
+            userImageUrl: 'https://i.pravatar.cc/150?img=1',
+            rating: 4,
+            title: 'Warm and stylish, but sizing runs small',
+            comment:
+              'cant wash in machine and have to dry clean it. The coat is very warm and looks great, but I had to exchange it for a larger size as it runs small. Just be sure to size up when ordering.',
+            reviewDate: new Date('2024-08-12'),
+          },
+          {
+            id: 'r6-5',
+            productId: '6',
+            userName: 'Sakshi Mishra',
+            userImageUrl: 'https://i.pravatar.cc/150?img=1',
+            rating: 5,
+            title: 'Just loved the fit and the fabric',
+            comment:
+              'This coat exceeded my expectations. The wool blend is soft and the fit is very flattering. I get compliments every time I wear it. Highly recommend for anyone looking for a stylish winter coat.',
+            reviewDate: new Date('2024-08-12'),
+          },
+        ],
       },
       {
         id: '7',
@@ -277,9 +374,44 @@ export const EcommerceStore = signalStore(
         price: 129.99,
         imageUrl: 'sunglass.jpg',
         rating: 4,
-        reviewCount: 6,
+        reviewCount: 3,
         isStock: true,
         Category: 'Accessories',
+        reviews: [
+          {
+            id: 'r8-1',
+            productId: '8',
+            userName: 'Janki shah',
+            userImageUrl: 'https://i.pravatar.cc/150?img=12',
+            rating: 5,
+            title: 'unique and elegant design',
+            comment:
+              'It gives me luxurious look and the UV protection is excellent. I wear these daily and they have held up well with no scratches on the lenses. Highly recommend for anyone looking for stylish sunglasses.',
+            reviewDate: new Date('2024-11-05'),
+          },
+          {
+            id: 'r8-2',
+            productId: '8',
+            userName: 'Ria nair',
+            userImageUrl: 'https://i.pravatar.cc/150?img=13',
+            rating: 1,
+            title: 'Cheap quality',
+            comment:
+              'The sunglasses are not worth the price. The frame feels cheap and the lenses have scratches.',
+            reviewDate: new Date('2024-10-17'),
+          },
+          {
+            id: 'r8-3',
+            productId: '8',
+            userName: 'Noah Bennett',
+            userImageUrl: 'https://i.pravatar.cc/150?img=14',
+            rating: 3,
+            title: 'Stylish but not durable',
+            comment:
+              'The sunglasses are very attractive and provide good UV protection. However, they are not very durable and the frame feels flimsy.',
+            reviewDate: new Date('2024-09-12'),
+          },
+        ],
       },
       {
         id: '9',
@@ -359,6 +491,63 @@ export const EcommerceStore = signalStore(
         reviewCount: 6,
         isStock: false,
         Category: 'Home',
+        reviews: [
+          {
+            id: 'r10-1',
+            productId: '10',
+            userName: 'Tejas shah',
+            userImageUrl: 'https://i.pravatar.cc/150?img=15',
+            rating: 5,
+            title: 'Wake up to a clean home every day!',
+            comment:
+              'The mapping feature is fantastic. It learns the layout of my home and efficiently cleans every corner. The scheduling is reliable and it does a great job on both hardwood and carpet.',
+            reviewDate: new Date('2024-11-12'),
+          },
+          {
+            id: 'r10-2',
+            productId: '10',
+            userName: 'Paridhi Desai',
+            userImageUrl: 'https://i.pravatar.cc/150?img=16',
+            rating: 4,
+            title: 'Smart features work well, but setup is a hassle',
+            comment:
+              'Not a user friendly setup process, especially connecting to WiFi. Once it’s up and running, the app controls and scheduling work well. It picks up dirt and pet hair effectively.',
+            reviewDate: new Date('2024-10-25'),
+          },
+          {
+            id: 'r10-3',
+            productId: '10',
+            userName: 'Ram mathur',
+            userImageUrl: 'https://i.pravatar.cc/150?img=17',
+            rating: 3,
+            title: 'Decent vacuum, but app needs work',
+            comment:
+              'The vacuum itself does a decent job cleaning and the mapping is accurate. However, the app is buggy and sometimes fails to start the cleaning schedule. It’s a good vacuum but needs software improvements.',
+            reviewDate: new Date('2024-10-05'),
+          },
+          {
+            id: 'r10-4',
+            productId: '10',
+            userName: 'Rahul yadav',
+            userImageUrl: 'https://i.pravatar.cc/150?img=18',
+            rating: 3,
+            title: 'Good concept, average execution',
+            comment:
+              'I like the idea of a robot vacuum but the WiFi disconnects fairly often. Have to re-pair it every few days. The cleaning performance is decent though, especially for pet hair.',
+            reviewDate: new Date('2024-09-18'),
+          },
+          {
+            id: 'r10-5',
+            productId: '10',
+            userName: 'Geet sharma',
+            userImageUrl: 'https://i.pravatar.cc/150?img=19',
+            rating: 3,
+            title: 'Mixed feelings — great hardware, weak software',
+            comment:
+              'Build quality is premium and it cleans well on hard floors. Unfortunately the smart features are let down by inconsistent app performance. Hoping for firmware improvements.',
+            reviewDate: new Date('2024-08-30'),
+          },
+        ],
       },
     ],
     category: 'all',
@@ -368,6 +557,8 @@ export const EcommerceStore = signalStore(
     selectedProductId: undefined,
     loading: false,
     writeReview:false,
+    menuSideBar:false,
+    searchQuery:''
   } as EcommerceState),
   withStorageSync({
     key: 'Eccomerce-store',
@@ -378,13 +569,21 @@ export const EcommerceStore = signalStore(
     }),
   }),
   withComputed(
-    ({ category, products, wishlistItems, cartItems, selectedProductId }) => ({
+    ({ category, products, wishlistItems, cartItems, selectedProductId ,searchQuery}) => ({
       filteredProducts: computed(() => {
         const cat = category().toLowerCase();
         return cat === 'all'
           ? products()
           : products().filter((p) => p.Category.toLowerCase() === cat);
       }),
+      filteredProductsForSearch: computed(() => {
+        const cat = category().toLowerCase();
+        const searchterm = searchQuery().toLowerCase();
+
+        return cat === 'all'
+          ? products().filter((p) => p.name.toLowerCase().includes(searchterm))
+          : products().filter((p) => p.Category.toLowerCase() === cat && p.name.toLowerCase().includes(searchterm));
+        }),
       wishlistCount: computed(() => wishlistItems().length),
       cartItemsCount: computed(() =>
         cartItems().reduce((acc, item) => acc + item.quantity, 0),
@@ -609,7 +808,25 @@ export const EcommerceStore = signalStore(
 
         await new Promise(resolve=> setTimeout(resolve,1000));
         patchState(store,{products:updatedProducts,loading:false,writeReview:false});
+      },
+
+      toggleMenuSidebar:()=>{
+        patchState(store,{
+          menuSideBar: !store.menuSideBar()
+        })
+      },
+      setSearchQuery:(query:string)=>{
+        patchState(store,{
+          searchQuery:query
+        });
+
+        if(query != ''){
+          patchState(store,{category:'all'});
+          router.navigate(['products/all']);
+        }
       }
+
+     
     }),
   ),
 );
